@@ -14,12 +14,39 @@ div{
   </style>
 </head>
 <body translate="no">
+<div>
+<button id="playMe">Play Me</button>
+<button id="playFast">Play Fast</button>
+<button id="playFromMiddle">Play From Middle</button>
+</div>
+<video width="400" id="myVideo" controls>
+<source src="https://github.com/matthewlucht/1902/raw/master/video/Soft1.mp4" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
 <div>Hello <span>World</span></div>
 <script id="rendered-js">
       console.clear();
-var x = 5;
-x = x + 6;
-console.log("Hello World",x);
+
+vid = document.getElementById("myVideo");
+document.getElementById("playMe").addEventListener("click",playMe);
+document.getElementById("playFast").addEventListener("click",playFast);
+document.getElementById("playFromMiddle").addEventListener("click",playFromMiddle);
+
+function playMe(e){
+  console.log("Button Clicked");
+  vid.playbackRate = .5;
+  vid.play();
+}
+
+function playFast(e){
+  vid.playbackRate = 2;
+  vid.play();
+}
+
+function playFromMiddle(e){
+  vid.currentTime = 2;
+  vid.play();
+}
     </script>
 </body>
 </html>
