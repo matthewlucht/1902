@@ -15,8 +15,9 @@ div{
 </head>
 <body translate="no">
 <div>
-<button id="playMe">Play Me</button>
-<button id="playFast">Play Fast</button>
+<button id="playMe">|></button>
+<button id="pause">||</button>
+<button id="playFast">|>|></button>
 <button id="playFromMiddle">Play From Middle</button>
 </div>
 <video width="400" id="myVideo" controls>
@@ -31,6 +32,7 @@ vid = document.getElementById("myVideo");
 document.getElementById("playMe").addEventListener("click",playMe);
 document.getElementById("playFast").addEventListener("click",playFast);
 document.getElementById("playFromMiddle").addEventListener("click",playFromMiddle);
+document.getElementById("pause").addEventListener("click",pause);
 
 function playMe(e){
   console.log("Button Clicked");
@@ -44,8 +46,12 @@ function playFast(e){
 }
 
 function playFromMiddle(e){
-  vid.currentTime = 2;
+  vid.currentTime = 2.5;
   vid.play();
+}
+
+function pause(e){
+  vid.pause();
 }
     </script>
 </body>
